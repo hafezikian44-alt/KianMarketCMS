@@ -1,0 +1,217 @@
+<body>
+  <main class="main" id="dashboard">
+    <header class="topbar">
+      <div>
+        <h1>داشبورد مدیریت</h1>
+        <p class="subtitle">
+          خوش آمدید! وضعیت کلی فروشگاه را از اینجا بررسی کنید.
+        </p>
+      </div>
+    </header>
+
+    <section class="stats" aria-label="آمار کلی">
+      <article class="stat-card">
+        <div class="stat-top">
+          <span class="stat-label fs-6">تعداد محصولات</span
+          ><span class="stat-icon cyan">◇</span>
+        </div>
+        <div class="stat-number" id="product-count">۲۴۸</div>
+      </article>
+      <article class="stat-card">
+        <div class="stat-top">
+          <span class="stat-label fs-6">تعداد کاربران</span
+          ><span class="stat-icon blue">♙</span>
+        </div>
+        <div class="stat-number">۵۸۷</div>
+      </article>
+      <article class="stat-card">
+        <div class="stat-top">
+          <span class="stat-label fs-6">تعداد ادمین‌ها</span
+          ><span class="stat-icon green">♢</span>
+        </div>
+        <div class="stat-number">۳</div>
+      </article>
+      <article class="stat-card">
+        <div class="stat-top">
+          <span class="stat-label fs-6">تعداد تیکت‌ها</span
+          ><span class="stat-icon purple">✉</span>
+        </div>
+        <div class="stat-number">۱۲۴</div>
+      </article>
+    </section>
+
+    <section class="content-grid">
+      <article class="panel products-panel" id="products">
+        <header class="panel-header">
+          <div class="text-light">
+            <h2 class="fs-6">لیست محصولات</h2>
+            <p>محصولات فروشگاه را مدیریت کنید.</p>
+          </div>
+          <label class="search-box"
+            ><span>⌕</span
+            ><input
+              id="product-search"
+              type="search"
+              placeholder="جستجوی محصول..."
+              aria-label="جستجوی محصول"
+          /></label>
+        </header>
+        <div class="table-scroll">
+          <table class="products-table">
+            <thead>
+              <tr class="table-header">
+                <th class="text-light" style="font-size: 14px">عنوان محصول</th>
+                <th class="text-light" style="font-size: 14px">قیمت</th>
+                <th class="text-light" style="font-size: 14px">
+                  عنوان کوتاه محصول
+                </th>
+                <th class="text-light" style="font-size: 14px">مدیریت</th>
+              </tr>
+            </thead>
+            <tbody id="product-list">
+              <tr class="product-ditale">
+                <td>
+                  <div class="product-cell">
+                    <span class="fw-bold text-light">لپ‌تاپ ایسوس</span>
+                  </div>
+                </td>
+                <td class="price text-light" style="font-size: 12px">
+                  50000000
+                </td>
+                <td>
+                  <span class="text-light" style="font-size: 12px"
+                    >example-title</span
+                  >
+                </td>
+                <td>
+                  <div class="actions">
+                    <button
+                      class="action-btn edit-btn"
+                      aria-label="ویرایش محصول"
+                    >
+                      ✎</button
+                    ><button
+                      class="action-btn delete-btn"
+                      aria-label="حذف محصول"
+                    >
+                      ×
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <footer class="panel-footer">
+          <span class="text-light" id="product-total">نمایش ۶ محصول</span>
+          <div class="pagination">
+            <button aria-label="صفحه قبل">‹</button
+            ><button class="selected">۱</button><button>۲</button
+            ><button>۳</button><button aria-label="صفحه بعد">›</button>
+          </div>
+        </footer>
+      </article>
+
+      <article class="panel users-panel" id="users">
+        <header class="panel-header">
+          <div>
+            <h2 class="text-light">آخرین کاربران</h2>
+            <p class="text-light">۵ کاربر ثبت‌نام‌شده اخیر</p>
+          </div>
+          <button class="more-btn" aria-label="گزینه‌های بیشتر">•••</button>
+        </header>
+        <div class="users-list">
+          <div class="user-item">
+            <div class="avatar user-a">ع</div>
+            <div class="user-info text-light">
+              <strong>علی محمدی</strong><small>ali.m@example.com</small>
+            </div>
+          </div>
+          <div class="user-item">
+            <div class="avatar user-b">س</div>
+            <div class="user-info text-light">
+              <strong>سارا رضایی</strong><small>sara.r@example.com</small>
+            </div>
+          </div>
+          <div class="user-item">
+            <div class="avatar user-c">م</div>
+            <div class="user-info text-light">
+              <strong>محمد حسینی</strong><small>mohammad@example.com</small>
+            </div>
+          </div>
+          <div class="user-item">
+            <div class="avatar user-d">ن</div>
+            <div class="user-info text-light">
+              <strong>نگار کریمی</strong><small>negar.k@example.com</small>
+            </div>
+          </div>
+          <div class="user-item">
+            <div class="avatar user-e">ر</div>
+            <div class="user-info text-light">
+              <strong>رضا احمدی</strong><small>reza.a@example.com</small>
+            </div>
+          </div>
+        </div>
+        <a href="#users" class="all-users text-light"
+          >مشاهده همه کاربران <span>←</span></a
+        >
+      </article>
+    </section>
+  </main>
+  <!-- 
+  <script>
+    const productList = document.querySelector("#product-list");
+    const searchInput = document.querySelector("#product-search");
+    const productTotal = document.querySelector("#product-total");
+    const productCount = document.querySelector("#product-count");
+
+    function updateProductTotal() {
+      const rows = [...productList.querySelectorAll("tr")];
+      const visibleRows = rows.filter(row => !row.hidden);
+      productTotal.textContent = `نمایش ${visibleRows.length} محصول`;
+    }
+
+    searchInput.addEventListener("input", () => {
+      const query = searchInput.value.trim().toLocaleLowerCase("fa");
+      [...productList.querySelectorAll("tr")].forEach(row => {
+        row.hidden = !row.cells[0].textContent.toLocaleLowerCase("fa").includes(query);
+      });
+      updateProductTotal();
+    });
+
+    productList.addEventListener("click", event => {
+      const button = event.target.closest("button");
+      if (!button) return;
+      const row = button.closest("tr");
+
+      if (button.classList.contains("delete-btn")) {
+        if (confirm(`محصول «${row.querySelector("strong").textContent}» حذف شود؟`)) {
+          row.remove();
+          productCount.textContent = String(Math.max(0, Number(productCount.dataset.count || 248) - 1)).replace(/\d/g, d => "۰۱۲۳۴۵۶۷۸۹"[d]);
+          productCount.dataset.count = Math.max(0, Number(productCount.dataset.count || 248) - 1);
+          updateProductTotal();
+        }
+      }
+
+      if (button.classList.contains("edit-btn")) {
+        const title = row.querySelector(".product-cell strong");
+        const updated = prompt("عنوان جدید محصول:", title.textContent);
+        if (updated && updated.trim()) title.textContent = updated.trim();
+      }
+    });
+
+    document.querySelectorAll(".nav-link").forEach(link => {
+      link.addEventListener("click", () => {
+        document.querySelectorAll(".nav-link").forEach(item => item.classList.remove("active"));
+        link.classList.add("active");
+      });
+    });
+
+    document.querySelectorAll(".pagination button").forEach(button => {
+      button.addEventListener("click", () => {
+        document.querySelectorAll(".pagination button").forEach(item => item.classList.remove("selected"));
+        if (/^[۰-۹0-9]+$/.test(button.textContent.trim())) button.classList.add("selected");
+      });
+    });
+  </script> -->
+</body>

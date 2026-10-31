@@ -1,0 +1,66 @@
+<section class="m-5">
+  <h3 class="mb-1 fw-bold">مدیریت محصولات</h3>
+  <p class="mb-4">محصولات پلتفرم را از این جا مدیریت کنید.</p>
+  <article class="panel products-panel" id="products">
+    <header class="panel-header">
+      <div class="text-light">
+        <h2 class="fs-6">لیست محصولات</h2>
+        <p>محصولات را مدیریت کنید.</p>
+      </div>
+      <label class="search-box"
+        ><span>⌕</span
+        ><input
+          id="product-search"
+          type="search"
+          placeholder="جستجوی محصول..."
+          aria-label="جستجوی محصول"
+      /></label>
+    </header>
+    <div class="table-scroll">
+      <table class="products-table">
+        <thead>
+          <tr class="table-header">
+            <th class="text-light" style="font-size: 14px">نام محصول</th>
+            <th class="text-light" style="font-size: 14px">قیمت</th>
+            <th class="text-light" style="font-size: 14px">شناسه ی کوتاه</th>
+          </tr>
+        </thead>
+        <tbody id="product-list">
+          <tr class="product-ditale">
+            <td>
+              <div class="product-cell">
+                <span class="fw-bold text-light">laptop ROG</span>
+              </div>
+            </td>
+            <td class="price text-light" style="font-size: 12px">
+              50000000000
+            </td>
+            <td>
+              <span class="text-light" style="font-size: 12px"
+                >asus-rog-strix</span
+              >
+            </td>
+
+            <td>
+              <div class="actions">
+                <button class="action-btn edit-btn" aria-label="ویرایش محصول">
+                  ✎</button
+                ><button class="action-btn delete-btn" aria-label="حذف محصول">
+                  ×
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <footer class="panel-footer">
+      <span class="text-light" id="product-total">نمایش ۶ کاربر</span>
+      <div class="pagination">
+        <button aria-label="صفحه قبل">‹</button
+        ><button class="selected">۱</button><button>۲</button><button>۳</button
+        ><button aria-label="صفحه بعد">›</button>
+      </div>
+    </footer>
+  </article>
+</section>

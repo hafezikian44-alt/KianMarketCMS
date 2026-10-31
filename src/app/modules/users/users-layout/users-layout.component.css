@@ -1,0 +1,279 @@
+:root {
+  --primary: #3568e8;
+  --background: #f5f7fb;
+  --surface: #fff;
+  --text: #192944;
+  --muted: #8995a9;
+  --border: #e9edf4;
+  --radius: 16px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--text);
+  font-family: "Vazirmatn", Tahoma, sans-serif;
+  font-size: 13px;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(260px, 1fr);
+  align-items: stretch;
+  gap: 20px;
+}
+
+.panel {
+  min-width: 0;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 5px 18px rgb(25 45 85 / 3%);
+}
+
+.products-panel {
+  position: relative;
+  background: #030057;
+  border-radius: 8px;
+  padding-bottom: 60px;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  padding: 21px 22px;
+  border-bottom: 1px solid var(--border);
+}
+
+.panel-header h2 {
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.panel-header p {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  width: 190px;
+  max-width: 48%;
+  padding: 9px 11px;
+  border: 1px solid #e7ebf3;
+  border-radius: 9px;
+  background: #fafbfe;
+  color: #8b98ad;
+}
+
+.search-box span {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.search-box input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--text);
+  font-size: 11px;
+}
+
+.search-box:focus-within {
+  border-color: var(--primary);
+}
+
+.table-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: right;
+  white-space: nowrap;
+}
+
+thead {
+  background: #f8faff;
+}
+
+th {
+  padding: 14px 17px;
+  color: #7d8aa0;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+td {
+  padding: 13px 17px;
+  border-bottom: 1px solid #eff2f7;
+  font-size: 11px;
+}
+
+tbody tr {
+  transition: background 0.15s;
+}
+
+tbody tr:hover {
+  background: #3831f8;
+}
+
+tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.table-header {
+  background: #030057;
+}
+
+.product-ditale {
+  background-color: #030057;
+}
+
+.product-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.product-cell > span:last-child {
+  display: grid;
+  gap: 5px;
+}
+
+.price {
+  color: #33435e;
+  font-weight: 700;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.action-btn {
+  display: grid;
+  place-items: center;
+  width: 29px;
+  height: 29px;
+  border: 0;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 16px;
+  transition:
+    transform 0.2s,
+    filter 0.2s;
+}
+
+.action-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(0.94);
+}
+
+.edit-btn {
+  background: #3568e8;
+}
+
+.delete-btn {
+  background: #e4535b;
+  font-size: 21px;
+}
+
+.panel-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 20px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 10px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.pagination {
+  display: flex;
+  gap: 5px;
+}
+
+.pagination button {
+  display: grid;
+  place-items: center;
+  min-width: 28px;
+  height: 28px;
+  padding: 0 7px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: #fff;
+  color: #64728a;
+}
+
+.pagination button.selected {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: #fff;
+}
+
+@media (max-width: 1250px) {
+  .content-grid {
+    grid-template-columns: minmax(0, 1.7fr) minmax(245px, 1fr);
+    gap: 15px;
+  }
+}
+
+@media (max-width: 950px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .panel-header {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 17px 14px;
+  }
+
+  .search-box {
+    width: 100%;
+    max-width: none;
+  }
+
+  th,
+  td {
+    padding: 12px 13px;
+  }
+
+  .panel-footer {
+    padding: 13px;
+  }
+}
