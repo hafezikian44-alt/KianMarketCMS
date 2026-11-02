@@ -7,9 +7,19 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
 import { UsersModule } from './modules/users/users.module';
 import { ProductsModule } from './modules/products/products.module';
 import { MainAsideComponent } from './components/main-aside/main-aside.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+
 @NgModule({
   declarations: [AppComponent, LandingPageComponent, MainAsideComponent],
-  imports: [BrowserModule, AppRoutingModule, UsersModule, ProductsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    UsersModule,
+    ProductsModule,
+    HttpClientModule,
+    CommonModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

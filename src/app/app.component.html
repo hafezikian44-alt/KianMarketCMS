@@ -7,4 +7,103 @@
   </section>
 </main>
 
-<link rel="stylesheet" href="https://js-cms.iran.liara.run/api/courses" />
+<!-- 
+
+Products Module
+
+https://dummyjson.com/products
+
+دریافت لیست محصولات
+
+https://dummyjson.com/products/1
+
+جست‌وجوی محصول
+
+https://dummyjson.com/products/search?q=phone
+
+صفحه‌بندی (۱۰ محصول در هر صفحه)
+
+https://dummyjson.com/products?limit=10&skip=0
+
+
+
+
+
+
+Users Module
+
+https://dummyjson.com/users
+
+دریافت اطلاعات یک کاربر
+
+https://dummyjson.com/users/1
+
+جست‌وجوی کاربر
+
+https://dummyjson.com/users/search?q=john
+
+صفحه‌بندی (۱۰ کاربر در هر صفحه)
+
+https://dummyjson.com/users?limit=10&skip=0
+
+
+
+
+
+
+
+
+
+۱. ایجاد محصول جدید (POST)
+this.http.post(
+  'https://dummyjson.com/products/add',
+  {
+    title: 'Laptop ASUS',
+    price: 1500,
+    category: 'laptops'
+  }
+);
+
+
+۲. ویرایش محصول (PUT)
+this.http.put(
+  'https://dummyjson.com/products/1',
+  {
+    title: 'Updated Laptop',
+    price: 2000
+  }
+);
+
+
+۳. ویرایش بخشی از محصول (PATCH)
+this.http.patch(
+  'https://dummyjson.com/products/1',
+  {
+    price: 1800
+  }
+);
+
+
+۴. ایجاد کاربر جدید (POST)
+this.http.post(
+  'https://dummyjson.com/users/add',
+  {
+    firstName: 'Kian',
+    lastName: 'Hafezi',
+    age: 22,
+    email: 'kian@example.com'
+  }
+);
+
+
+۵. ویرایش کاربر (PUT)
+this.http.put(
+  'https://dummyjson.com/users/1',
+  {
+    firstName: 'Updated Name',
+    age: 25
+  }
+);
+
+
+-->

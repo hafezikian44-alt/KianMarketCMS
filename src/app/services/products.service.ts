@@ -1,9 +1,16 @@
-import { Injectable } from '@angular/core';
-
+import { inject, Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { IProductsResponseDto } from '../dtos/products.dto';
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProductsService {
+  private http = inject(HttpClient);
+  constructor() {}
 
-  constructor() { }
+  getProducts() {
+    return this.http.get<IProductsResponseDto>(
+      'https://dummyjson.com/products',
+    );
+  }
 }
