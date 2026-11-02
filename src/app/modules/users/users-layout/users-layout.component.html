@@ -28,23 +28,27 @@
             <th class="text-light" style="font-size: 14px">رمز عبور</th>
           </tr>
         </thead>
-        <tbody id="product-list">
+        <tbody id="product-list" *ngFor="let user of usersList">
           <tr class="product-ditale">
             <td>
               <div class="product-cell">
-                <span class="fw-bold text-light">کیان حافظی</span>
+                <span class="fw-bold text-light"
+                  >{{ user.firstName }} {{ user.lastName }}
+                </span>
               </div>
             </td>
             <td class="price text-light" style="font-size: 12px">
-              kianhafezii
+              {{ user.username }}
             </td>
             <td>
-              <span class="text-light" style="font-size: 12px"
-                >kian@gmail.com</span
-              >
+              <span class="text-light" style="font-size: 12px">{{
+                user.email
+              }}</span>
             </td>
             <td>
-              <span class="text-light" style="font-size: 12px">kian12345</span>
+              <span class="text-light" style="font-size: 12px">{{
+                user.password
+              }}</span>
             </td>
             <td>
               <div class="actions">
@@ -60,7 +64,9 @@
       </table>
     </div>
     <footer class="panel-footer">
-      <span class="text-light" id="product-total">نمایش ۶ کاربر</span>
+      <span class="text-light" id="product-total"
+        >نمایش {{ usersList?.length }} کاربر</span
+      >
       <div class="pagination">
         <button aria-label="صفحه قبل">‹</button
         ><button class="selected">۱</button><button>۲</button><button>۳</button

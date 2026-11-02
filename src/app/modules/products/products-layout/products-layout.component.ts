@@ -15,7 +15,4 @@ export class ProductsLayoutComponent implements OnInit {
       this.products = response.products;
     });
   }
-  logProducts() {
-    console.log(this.products);
-  }
 }

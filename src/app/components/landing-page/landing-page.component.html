@@ -1,4 +1,9 @@
 <body>
+  <app-confirm-modal
+    [confirmName]="productName"
+    [confirmId]="productId"
+    [openModal]="isModalOpen"
+  ></app-confirm-modal>
   <main class="main" id="dashboard">
     <header class="topbar">
       <div>
@@ -22,21 +27,21 @@
           <span class="stat-label fs-6">تعداد کاربران</span
           ><span class="stat-icon blue">♙</span>
         </div>
-        <div class="stat-number">۵۸۷</div>
+        <div class="stat-number">{{ allUsers?.length }}</div>
       </article>
       <article class="stat-card">
         <div class="stat-top">
           <span class="stat-label fs-6">تعداد ادمین‌ها</span
           ><span class="stat-icon green">♢</span>
         </div>
-        <div class="stat-number">۳</div>
+        <div class="stat-number">3</div>
       </article>
       <article class="stat-card">
         <div class="stat-top">
           <span class="stat-label fs-6">تعداد تیکت‌ها</span
           ><span class="stat-icon purple">✉</span>
         </div>
-        <div class="stat-number">۱۲۴</div>
+        <div class="stat-number">124</div>
       </article>
     </section>
 
@@ -93,6 +98,7 @@
                     ><button
                       class="action-btn delete-btn"
                       aria-label="حذف محصول"
+                      (click)="deleteProduct(product)"
                     >
                       ×
                     </button>
@@ -118,43 +124,21 @@
         <header class="panel-header">
           <div>
             <h2 class="text-light">آخرین کاربران</h2>
-            <p class="text-light">۵ کاربر ثبت‌نام‌شده اخیر</p>
+            <p class="text-light">5 کاربر ثبت‌نام‌شده اخیر</p>
           </div>
           <button class="more-btn" aria-label="گزینه‌های بیشتر">•••</button>
         </header>
         <div class="users-list">
-          <div class="user-item">
-            <div class="avatar user-a">ع</div>
+          <div class="user-item" *ngFor="let user of userList">
+            <div class="avatar user-a">{{ user.firstName.slice(0, 1) }}</div>
             <div class="user-info text-light">
-              <strong>علی محمدی</strong><small>ali.m@example.com</small>
-            </div>
-          </div>
-          <div class="user-item">
-            <div class="avatar user-b">س</div>
-            <div class="user-info text-light">
-              <strong>سارا رضایی</strong><small>sara.r@example.com</small>
-            </div>
-          </div>
-          <div class="user-item">
-            <div class="avatar user-c">م</div>
-            <div class="user-info text-light">
-              <strong>محمد حسینی</strong><small>mohammad@example.com</small>
-            </div>
-          </div>
-          <div class="user-item">
-            <div class="avatar user-d">ن</div>
-            <div class="user-info text-light">
-              <strong>نگار کریمی</strong><small>negar.k@example.com</small>
-            </div>
-          </div>
-          <div class="user-item">
-            <div class="avatar user-e">ر</div>
-            <div class="user-info text-light">
-              <strong>رضا احمدی</strong><small>reza.a@example.com</small>
+              <strong>{{ user.firstName }} {{ user.lastName }}</strong
+              ><small>{{ user.email }}</small>
             </div>
           </div>
         </div>
-        <a href="#users" class="all-users text-light"
+
+        <a class="all-users text-light" routerLink="/users"
           >مشاهده همه کاربران <span>←</span></a
         >
       </article>

@@ -9,6 +9,8 @@ import { ProductsModule } from './modules/products/products.module';
 import { MainAsideComponent } from './components/main-aside/main-aside.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { SharedModule } from 'src/app/modules/shared/shared.module';
+import { RouterOutlet } from '@angular/router';
 
 @NgModule({
   declarations: [AppComponent, LandingPageComponent, MainAsideComponent],
@@ -19,6 +21,8 @@ import { CommonModule } from '@angular/common';
     ProductsModule,
     HttpClientModule,
     CommonModule,
+    SharedModule,
+    NgModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
