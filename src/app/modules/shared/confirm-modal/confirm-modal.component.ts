@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-confirm-modal',
@@ -9,4 +9,9 @@ export class ConfirmModalComponent {
   @Input() confirmName?: string | null;
   @Input() confirmId?: number | null;
   @Input() openModal?: boolean | null;
+
+  @Output() closeModal = new EventEmitter<false>();
+  onCloseModal() {
+    this.closeModal.emit(false);
+  }
 }

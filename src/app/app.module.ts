@@ -22,7 +22,7 @@ import { RouterOutlet } from '@angular/router';
     HttpClientModule,
     CommonModule,
     SharedModule,
-    NgModule,
+    // NgModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

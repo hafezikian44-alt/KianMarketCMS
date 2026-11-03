@@ -3,6 +3,7 @@
     [confirmName]="productName"
     [confirmId]="productId"
     [openModal]="isModalOpen"
+    (closeModal)="(false)"
   ></app-confirm-modal>
   <main class="main" id="dashboard">
     <header class="topbar">
@@ -144,7 +145,7 @@
       </article>
     </section>
   </main>
-  <!-- 
+  <!--
   <script>
     const productList = document.querySelector("#product-list");
     const searchInput = document.querySelector("#product-search");
