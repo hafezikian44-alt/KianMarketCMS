@@ -1,8 +1,13 @@
 <body>
+  <app-edit-product-modal
+    [confirmProduct]="confirmEditProduct"
+    [openModal]="isEditModalOpen"
+    (closeEditModal)="onCloseEditModal()"
+  ></app-edit-product-modal>
   <app-confirm-modal
     [confirmProduct]="currentDelProduct"
-    [openModal]="isModalOpen"
-    (closeModal)="onCloseModal()"
+    [openModal]="isDeleteModalOpen"
+    (closeDeleteModal)="onCloseDeleteModal()"
   ></app-confirm-modal>
   <main class="main" id="dashboard">
     <header class="topbar">
@@ -93,12 +98,13 @@
                     <button
                       class="action-btn edit-btn"
                       aria-label="ویرایش محصول"
+                      (click)="onEditProduct(product)"
                     >
                       ✎</button
                     ><button
                       class="action-btn delete-btn"
                       aria-label="حذف محصول"
-                      (click)="deleteProduct(product)"
+                      (click)="onDeleteProduct(product)"
                     >
                       ×
                     </button>

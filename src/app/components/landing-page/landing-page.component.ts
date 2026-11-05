@@ -1,11 +1,4 @@
-import {
-  Component,
-  EventEmitter,
-  inject,
-  Input,
-  OnInit,
-  Output,
-} from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { IProductDto } from 'src/app/dtos/products.dto';
 import { IUserDto } from 'src/app/dtos/users.dto';
 import { ProductsService } from 'src/app/services/products.service';
@@ -24,7 +17,10 @@ export class LandingPageComponent implements OnInit {
   allUsers?: IUserDto[] | null;
 
   currentDelProduct?: IProductDto | null;
-  isModalOpen: boolean = false;
+  isDeleteModalOpen: boolean = false;
+
+  confirmEditProduct?: IProductDto | null;
+  isEditModalOpen: boolean = false;
 
   ngOnInit() {
     this.productsService.getProducts().subscribe((response) => {
@@ -36,18 +32,24 @@ export class LandingPageComponent implements OnInit {
       this.userList = response.users.slice(-5);
     });
   }
-  // @Output()
-  // onDelProduct = new EventEmitter<number>();
-  // this.onDelProduct.emit(productId);
 
-  deleteProduct(product: IProductDto) {
+  onDeleteProduct(product: IProductDto) {
     this.currentDelProduct = product;
-    this.isModalOpen = true;
+    this.isDeleteModalOpen = true;
     this.currentDelProduct = product;
-    this.isModalOpen = true;
+    this.isDeleteModalOpen = true;
   }
-  onCloseModal() {
-    this.isModalOpen = false;
+  onCloseDeleteModal() {
+    this.isDeleteModalOpen = false;
+    console.log(this.products);
+  }
+
+  onEditProduct(product: IProductDto) {
+    this.confirmEditProduct = product;
+    this.isEditModalOpen = true;
+  }
+  onCloseEditModal() {
+    this.isEditModalOpen = false;
     console.log(this.products);
   }
 }

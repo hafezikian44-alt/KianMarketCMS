@@ -10,7 +10,6 @@ import { MainAsideComponent } from './components/main-aside/main-aside.component
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from 'src/app/modules/shared/shared.module';
-import { RouterOutlet } from '@angular/router';
 
 @NgModule({
   declarations: [AppComponent, LandingPageComponent, MainAsideComponent],
@@ -22,7 +21,6 @@ import { RouterOutlet } from '@angular/router';
     HttpClientModule,
     CommonModule,
     SharedModule,
-    // NgModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
