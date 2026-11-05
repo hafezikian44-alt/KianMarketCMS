@@ -1,4 +1,14 @@
 <section class="m-5">
+  <app-edit-product-modal
+    [confirmProduct]="confirmEditProduct"
+    [openModal]="isEditModalOpen"
+    (closeEditModal)="onCloseEditModal()"
+  ></app-edit-product-modal>
+  <app-confirm-modal
+    [confirmProduct]="currentDelProduct"
+    [openModal]="isDeleteModalOpen"
+    (closeDeleteModal)="onCloseDeleteModal()"
+  ></app-confirm-modal>
   <h3 class="mb-1 fw-bold">مدیریت محصولات</h3>
   <p class="mb-4">محصولات پلتفرم را از این جا مدیریت کنید.</p>
   <article class="panel products-panel" id="products">
@@ -43,9 +53,17 @@
 
             <td>
               <div class="actions">
-                <button class="action-btn edit-btn" aria-label="ویرایش محصول">
+                <button
+                  class="action-btn edit-btn"
+                  aria-label="ویرایش محصول"
+                  (click)="onEditProduct(product)"
+                >
                   ✎</button
-                ><button class="action-btn delete-btn" aria-label="حذف محصول">
+                ><button
+                  class="action-btn delete-btn"
+                  aria-label="حذف محصول"
+                  (click)="onDeleteProduct(product)"
+                >
                   ×
                 </button>
               </div>

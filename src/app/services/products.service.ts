@@ -14,6 +14,6 @@ export class ProductsService {
     );
   }
   deleteProduct(product: IProductDto) {
-    this.http.delete(`https://dummyjson.com/products/${product.id}/`);
+    return this.http.delete(`https://dummyjson.com/products/${product.id}/`);
   }
 }

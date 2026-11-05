@@ -1,0 +1,173 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(42, 56, 80, 0.75);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+  padding: 20px;
+}
+
+.logout-modal {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  text-align: center;
+  padding: 0 35px 35px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.logout-modal::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 145px;
+  background: #3265e6;
+  border-radius: 0 0 50% 50%;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  z-index: 2;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.modal-icon {
+  position: relative;
+  z-index: 1;
+  width: 95px;
+  height: 95px;
+  margin: 55px auto 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #fff;
+  border: 4px solid rgba(50, 101, 230, 0.15);
+  box-shadow: 0 5px 20px rgba(42, 56, 80, 0.12);
+}
+
+.modal-icon span {
+  font-size: 48px;
+  font-weight: bold;
+  color: #2a3850;
+}
+
+.modal-content {
+  position: relative;
+  z-index: 1;
+}
+
+.modal-content h2 {
+  color: #2a3850;
+  font-size: 23px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.form-group {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  color: #2a3850;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 9px;
+}
+
+.form-group input {
+  width: 100%;
+  height: 50px;
+  padding: 0 15px;
+  border: 1px solid #dce2ec;
+  border-radius: 10px;
+  outline: none;
+  color: #2a3850;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.form-group input:focus {
+  border-color: #3265e6;
+  box-shadow: 0 0 0 3px rgba(50, 101, 230, 0.1);
+}
+
+.form-group input::placeholder {
+  color: #a0a9b8;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.logout-btn,
+.edit-btn {
+  flex: 1;
+  height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.logout-btn {
+  background: #2a3850;
+}
+
+.logout-btn:hover {
+  background: #3265e6;
+  transform: translateY(-2px);
+}
+
+.edit-btn {
+  background: #087f5b;
+}
+
+.edit-btn:hover {
+  background: #06a678;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 480px) {
+  .logout-modal {
+    padding: 0 20px 25px;
+  }
+
+  .modal-content h2 {
+    font-size: 19px;
+  }
+
+  .modal-actions {
+    gap: 10px;
+  }
+
+  .logout-btn,
+  .edit-btn {
+    font-size: 14px;
+  }
+}

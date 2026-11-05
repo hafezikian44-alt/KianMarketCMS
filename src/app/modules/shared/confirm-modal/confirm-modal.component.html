@@ -1,6 +1,8 @@
 <div class="modal-overlay" *ngIf="openModal">
   <div class="logout-modal" dir="rtl">
-    <button class="close-btn" type="button">&times;</button>
+    <button class="close-btn" type="button" (click)="onCloseDeleteModal()">
+      &times;
+    </button>
 
     <div class="modal-icon">
       <span>!!</span>
@@ -10,12 +12,16 @@
       <h2>حذف محصول</h2>
 
       <p>
-        آیا مطمعن هستید که می خواهید محصول {{ confirmName }} با شناسه ی
-        {{ confirmId }} را حذف کنید؟
+        آیا مطمعن هستید که می خواهید محصول {{ confirmProduct?.title }} با شناسه
+        ی {{ confirmProduct?.id }} را حذف کنید؟
       </p>
       <div class="d-flex justify-content-between">
-        <button class="logout-btn" type="button">خروج</button>
-        <button class="delete-btn" type="button">حذف</button>
+        <button class="logout-btn" type="button" (click)="onCloseDeleteModal()">
+          بستن
+        </button>
+        <button class="delete-btn" type="button" (click)="onDeleteProduct()">
+          حذف
+        </button>
       </div>
     </div>
   </div>

@@ -1,9 +1,8 @@
 <body>
   <app-confirm-modal
-    [confirmName]="productName"
-    [confirmId]="productId"
+    [confirmProduct]="currentDelProduct"
     [openModal]="isModalOpen"
-    (closeModal)="(false)"
+    (closeModal)="onCloseModal()"
   ></app-confirm-modal>
   <main class="main" id="dashboard">
     <header class="topbar">

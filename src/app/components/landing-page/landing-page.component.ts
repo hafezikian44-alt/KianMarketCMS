@@ -23,8 +23,7 @@ export class LandingPageComponent implements OnInit {
   userList?: IUserDto[] | null;
   allUsers?: IUserDto[] | null;
 
-  productName?: string | null;
-  productId?: number | null;
+  currentDelProduct?: IProductDto | null;
   isModalOpen: boolean = false;
 
   ngOnInit() {
@@ -42,8 +41,13 @@ export class LandingPageComponent implements OnInit {
   // this.onDelProduct.emit(productId);
 
   deleteProduct(product: IProductDto) {
-    this.productName = product.title;
-    this.productId = product.id;
+    this.currentDelProduct = product;
     this.isModalOpen = true;
+    this.currentDelProduct = product;
+    this.isModalOpen = true;
+  }
+  onCloseModal() {
+    this.isModalOpen = false;
+    console.log(this.products);
   }
 }
