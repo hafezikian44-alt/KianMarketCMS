@@ -15,7 +15,7 @@ export class ProductsLayoutComponent implements OnInit {
   currentDelProduct?: IProductDto | null;
   isDeleteModalOpen: boolean = false;
   isEditModalOpen: boolean = false;
-
+  isCreateModalOpen: boolean = false;
   ngOnInit() {
     this.productsSerevice.getProducts().subscribe((response) => {
       this.products = response.products;
@@ -37,5 +37,13 @@ export class ProductsLayoutComponent implements OnInit {
   onDeleteProduct(product: IProductDto) {
     this.currentDelProduct = product;
     this.isDeleteModalOpen = true;
+  }
+
+  onCreateProduct() {
+    this.isCreateModalOpen = true;
+    console.log('on create product');
+  }
+  onCloseCreateProductModal() {
+    this.isCreateModalOpen = false;
   }
 }

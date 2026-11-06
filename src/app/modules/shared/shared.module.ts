@@ -6,8 +6,16 @@ import { FormsModule } from '@angular/forms';
 import { CreateProductModalComponent } from './create-product-modal/create-product-modal.component';
 
 @NgModule({
-  declarations: [ConfirmModalComponent, EditProductModalComponent, CreateProductModalComponent],
+  declarations: [
+    ConfirmModalComponent,
+    EditProductModalComponent,
+    CreateProductModalComponent,
+  ],
   imports: [CommonModule, FormsModule],
-  exports: [ConfirmModalComponent, EditProductModalComponent],
+  exports: [
+    ConfirmModalComponent,
+    EditProductModalComponent,
+    CreateProductModalComponent,
+  ],
 })
 export class SharedModule {}

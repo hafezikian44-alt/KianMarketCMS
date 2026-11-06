@@ -1,1 +1,177 @@
-<p>create-product-modal works!</p>
+<div class="modal-overlay" *ngIf="openModal">
+  <div class="logout-modal" dir="rtl">
+    <button
+      class="close-btn"
+      type="button"
+      (click)="onCloseCreateProductModal()"
+    >
+      &times;
+    </button>
+
+    <div class="modal-icon">
+      <span>+</span>
+    </div>
+
+    <div class="modal-content">
+      <h2>افزودن محصول جدید</h2>
+
+      <form (ngSubmit)="onSubmitAdd()">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="productTitle">عنوان محصول</label>
+            <input
+              id="productTitle"
+              type="text"
+              name="title"
+              [(ngModel)]="newProduct.title"
+              placeholder="عنوان محصول را وارد کنید"
+              required
+            />
+            <p *ngIf="newProduct.title === ''" class="text-danger mt-2 mx-2">
+              عنوان محصول فیلد اجباری میباشد!
+            </p>
+          </div>
+
+          <div class="form-group">
+            <label for="productBrand">برند</label>
+            <input
+              id="productBrand"
+              type="text"
+              name="brand"
+              [(ngModel)]="newProduct.brand"
+              placeholder="نام برند"
+              required
+            />
+            <p *ngIf="newProduct.brand === ''" class="text-danger mt-2 mx-2">
+              نام برند محصول فیلد اجباری میباشد!
+            </p>
+          </div>
+
+          <div class="form-group">
+            <label for="productCategory">دسته‌بندی</label>
+            <input
+              id="productCategory"
+              type="text"
+              name="category"
+              [(ngModel)]="newProduct.category"
+              placeholder="مثلاً beauty"
+              required
+            />
+            <p *ngIf="newProduct.category === ''" class="text-danger mt-2 mx-2">
+              دسته بندی محصول فیلد اجباری میباشد!
+            </p>
+          </div>
+
+          <div class="form-group">
+            <label for="productPrice">قیمت (دلار)</label>
+            <input
+              id="productPrice"
+              type="number"
+              name="price"
+              [(ngModel)]="newProduct.price"
+              placeholder="قیمت محصول"
+              min="0"
+              step="0.01"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="productStock">موجودی</label>
+            <input
+              id="productStock"
+              type="number"
+              name="stock"
+              [(ngModel)]="newProduct.stock"
+              placeholder="تعداد موجودی"
+              min="0"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="productDiscount">درصد تخفیف</label>
+            <input
+              id="productDiscount"
+              type="number"
+              name="discountPercentage"
+              [(ngModel)]="newProduct.discountPercentage"
+              placeholder="درصد تخفیف"
+              min="0"
+              max="100"
+              step="0.01"
+            />
+          </div>
+
+          <div class="form-group full-width">
+            <label for="productDescription">توضیحات محصول</label>
+            <textarea
+              id="productDescription"
+              name="description"
+              [(ngModel)]="newProduct.description"
+              placeholder="توضیحات محصول را وارد کنید"
+              rows="3"
+              required
+            ></textarea>
+            <p
+              *ngIf="newProduct.description === ''"
+              class="text-danger mt-2 mx-2"
+            >
+              توضیحات محصول فیلد اجباری میباشد!
+            </p>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="productThumbnail">آدرس تصویر کوچک (Thumbnail)</label>
+            <input
+              id="productThumbnail"
+              type="url"
+              name="thumbnail"
+              [(ngModel)]="newProduct.thumbnail"
+              placeholder="https://example.com/thumbnail.webp"
+            />
+          </div>
+
+          <div class="form-group full-width">
+            <label for="productImages">آدرس تصاویر محصول</label>
+            <div class="d-flex gap-2">
+              <input
+                id="productImages"
+                type="url"
+                name="images"
+                [(ngModel)]="imageUrl"
+                placeholder="https://example.com/image.webp"
+              />
+              <button class="add-img-btn" type="button" (click)="onAddImage()">
+                اضافه کردن تصویر
+              </button>
+            </div>
+          </div>
+          <div class="form-group full-width card p-3">
+            <p class="fs-6 fw-bold text-dark">تصاویر اضافه شده</p>
+            <p class="fw-bold text-muted" *ngIf="!doWeHaveImg">
+              هنوز تصویری وجود ندارد ...
+            </p>
+            <div class="card-body" *ngIf="doWeHaveImg">
+              <div *ngFor="let img of newProduct.images">
+                <p class="card-text">{{ img }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button
+            class="logout-btn"
+            type="button"
+            (click)="onCloseCreateProductModal()"
+          >
+            بستن
+          </button>
+
+          <button class="edit-btn" type="submit">ثبت محصول</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

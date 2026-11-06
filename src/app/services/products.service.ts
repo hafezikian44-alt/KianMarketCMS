@@ -1,6 +1,11 @@
 import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { IProductDto, IProductsResponseDto } from '../dtos/products.dto';
+import {
+  ICreateProductDto,
+  IProductDto,
+  IProductsResponseDto,
+} from '../dtos/products.dto';
+import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
@@ -23,5 +28,10 @@ export class ProductsService {
       title: title,
       price: price,
     });
+  }
+  createProduct(product: ICreateProductDto) {
+    console.log('createProduct is called !');
+
+    return this.http.post('https://dummyjson.com/products/add', product);
   }
 }

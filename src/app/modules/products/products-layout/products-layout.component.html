@@ -1,4 +1,8 @@
 <section class="m-5">
+  <app-create-product-modal
+    [openModal]="isCreateModalOpen"
+    (closeCreateProductModal)="onCloseCreateProductModal()"
+  ></app-create-product-modal>
   <app-edit-product-modal
     [confirmProduct]="confirmEditProduct"
     [openModal]="isEditModalOpen"
@@ -17,6 +21,9 @@
         <h2 class="fs-6">لیست محصولات</h2>
         <p>محصولات را مدیریت کنید.</p>
       </div>
+      <button class="create-btn" (click)="onCreateProduct()">
+        ایجاد محصول جدید
+      </button>
       <label class="search-box"
         ><span>⌕</span
         ><input
