@@ -1,8 +1,6 @@
 <div class="modal-overlay" *ngIf="openModal">
   <div class="logout-modal" dir="rtl">
-    <button class="close-btn" type="button" (click)="onCloseDeleteModal()">
-      &times;
-    </button>
+    <button class="close-btn" type="button">&times;</button>
 
     <div class="modal-icon">
       <span>!!</span>
@@ -17,11 +15,9 @@
       </p>
       <div class="d-flex justify-content-between">
         <button class="logout-btn" type="button" (click)="onCloseDeleteModal()">
-          بستن
+          خروج
         </button>
-        <button class="delete-btn" type="button" (click)="onDeleteProduct()">
-          حذف
-        </button>
+        <button class="delete-btn" type="button">حذف</button>
       </div>
     </div>
   </div>
