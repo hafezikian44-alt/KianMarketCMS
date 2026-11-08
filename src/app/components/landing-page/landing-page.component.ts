@@ -22,10 +22,15 @@ export class LandingPageComponent implements OnInit {
   confirmEditProduct?: IProductDto | null;
   isEditModalOpen: boolean = false;
 
+  page: number = 1;
+  limit: number = 6;
+
   ngOnInit() {
-    this.productsService.getProducts().subscribe((response) => {
-      this.products = response.products;
-    });
+    this.productsService
+      .getProducts(this.page, this.limit)
+      .subscribe((response) => {
+        this.products = response.products;
+      });
 
     this.usersService.getUsers().subscribe((response) => {
       this.allUsers = response.users;

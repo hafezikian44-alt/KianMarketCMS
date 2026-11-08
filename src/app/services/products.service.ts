@@ -13,9 +13,10 @@ export class ProductsService {
   private http = inject(HttpClient);
   constructor() {}
 
-  getProducts() {
+  getProducts(page: number, limit: number) {
+    const skip: number = (page - 1) * limit;
     return this.http.get<IProductsResponseDto>(
-      'https://dummyjson.com/products',
+      `https://dummyjson.com/products?limit=${limit}&skip=${skip}`,
     );
   }
   deleteProduct(product: IProductDto) {

@@ -16,15 +16,53 @@ export class ProductsLayoutComponent implements OnInit {
   isDeleteModalOpen: boolean = false;
   isEditModalOpen: boolean = false;
   isCreateModalOpen: boolean = false;
+
+  currentPage: number = 1;
+  limit: number = 6;
+  totalProducts: number = 0;
+  visiblePage: number = 5;
+
   ngOnInit() {
-    this.productsSerevice.getProducts().subscribe((response) => {
-      this.products = response.products;
-    });
+    this.productsSerevice
+      .getProducts(this.currentPage, this.limit)
+      .subscribe((response) => {
+        this.products = response.products;
+        this.totalProducts = response.total;
+      });
+  }
+  get pagination(): number[] {
+    let startPage = Math.max(
+      1,
+      this.currentPage - Math.floor(this.visiblePage / 2),
+    );
+    let endPage = Math.min(this.totalPages, startPage + this.visiblePage - 1);
+    startPage = Math.max(1, endPage - this.visiblePage + 1);
+    return Array.from(
+      { length: endPage - startPage + 1 },
+      (_, index) => startPage + index,
+    );
+  }
+  get totalPages(): number {
+    if (this.totalProducts <= 0 || this.limit <= 0) return 0;
+    return Math.ceil(this.totalProducts / this.limit);
+  }
+  get pages(): number[] {
+    return Array.from({ length: this.totalPages }, (_, index) => index + 1);
   }
 
+  onChangePage(page: number): void {
+    if (page <= 0 || page > this.totalPages) return;
+    this.productsSerevice.getProducts(page, this.limit).subscribe({
+      next: (response) => {
+        this.products = response.products;
+        this.totalProducts = response.total;
+      },
+      error: (err) => console.error('can not get products:', err),
+    });
+  }
   onCloseEditModal() {
     this.isEditModalOpen = false;
-    console.log(this.products);
+    console.log(this.totalProducts);
   }
   onEditProduct(product: IProductDto) {
     this.confirmEditProduct = product;

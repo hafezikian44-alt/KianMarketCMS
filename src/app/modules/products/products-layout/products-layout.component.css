@@ -195,6 +195,9 @@ tbody tr:last-child td {
   transform: translateY(-2px);
   filter: brightness(0.94);
 }
+.active {
+  background-color: #4174f6;
+}
 
 .edit-btn {
   background: #3568e8;
@@ -223,6 +226,8 @@ tbody tr:last-child td {
 .pagination {
   display: flex;
   gap: 5px;
+  font-size: 12px;
+  font-weight: 500;
 }
 
 .pagination button {

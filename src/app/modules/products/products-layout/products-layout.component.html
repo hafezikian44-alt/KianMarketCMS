@@ -84,9 +84,15 @@
         >نمایش {{ products?.length }} محصول</span
       >
       <div class="pagination">
-        <button aria-label="صفحه قبل">‹</button
-        ><button class="selected">۱</button><button>۲</button><button>۳</button
-        ><button aria-label="صفحه بعد">›</button>
+        <button aria-label="صفحه قبل">‹</button>
+        <button
+          *ngFor="let page of pages"
+          (click)="onChangePage(page)"
+          [class.active]="currentPage === page"
+        >
+          {{ page }}
+        </button>
+        <button aria-label="صفحه بعد">›</button>
       </div>
     </footer>
   </article>
