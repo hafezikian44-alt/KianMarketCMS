@@ -13,8 +13,8 @@
     [openModal]="isDeleteModalOpen"
     (closeDeleteModal)="onCloseDeleteModal()"
   ></app-confirm-modal>
-  <h3 class="mb-1 fw-bold">مدیریت محصولات</h3>
-  <p class="mb-4">محصولات پلتفرم را از این جا مدیریت کنید.</p>
+  <!-- <h3 class="mb-1 fw-bold">مدیریت محصولات</h3>
+  <p class="mb-4">محصولات پلتفرم را از این جا مدیریت کنید.</p> -->
   <article class="panel products-panel" id="products">
     <header class="panel-header">
       <div class="text-light">
@@ -81,18 +81,18 @@
     </div>
     <footer class="panel-footer">
       <span class="text-light fw-bolder" id="product-total"
-        >نمایش {{ products?.length }} محصول</span
+        >نمایش {{ totalProducts }} محصول</span
       >
       <div class="pagination">
-        <button aria-label="صفحه قبل">‹</button>
+        <button aria-label="صفحه قبل" (click)="previousPage()">‹</button>
         <button
-          *ngFor="let page of pages"
+          *ngFor="let page of pagination"
           (click)="onChangePage(page)"
           [class.active]="currentPage === page"
         >
           {{ page }}
         </button>
-        <button aria-label="صفحه بعد">›</button>
+        <button aria-label="صفحه بعد" (click)="nextPage()">›</button>
       </div>
     </footer>
   </article>

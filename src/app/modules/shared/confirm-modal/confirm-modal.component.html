@@ -1,6 +1,8 @@
 <div class="modal-overlay" *ngIf="openModal">
   <div class="logout-modal" dir="rtl">
-    <button class="close-btn" type="button">&times;</button>
+    <button class="close-btn" type="button" (click)="onCloseDeleteModal()">
+      &times;
+    </button>
 
     <div class="modal-icon">
       <span>!!</span>

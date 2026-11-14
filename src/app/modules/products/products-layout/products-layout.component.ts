@@ -30,6 +30,7 @@ export class ProductsLayoutComponent implements OnInit {
         this.totalProducts = response.total;
       });
   }
+
   get pagination(): number[] {
     let startPage = Math.max(
       1,
@@ -42,6 +43,7 @@ export class ProductsLayoutComponent implements OnInit {
       (_, index) => startPage + index,
     );
   }
+
   get totalPages(): number {
     if (this.totalProducts <= 0 || this.limit <= 0) return 0;
     return Math.ceil(this.totalProducts / this.limit);
@@ -52,6 +54,7 @@ export class ProductsLayoutComponent implements OnInit {
 
   onChangePage(page: number): void {
     if (page <= 0 || page > this.totalPages) return;
+    this.currentPage = page;
     this.productsSerevice.getProducts(page, this.limit).subscribe({
       next: (response) => {
         this.products = response.products;
@@ -60,6 +63,17 @@ export class ProductsLayoutComponent implements OnInit {
       error: (err) => console.error('can not get products:', err),
     });
   }
+
+  previousPage() {
+    if (this.currentPage < 2) return;
+    this.currentPage = this.currentPage - 1;
+    this.onChangePage(this.currentPage);
+  }
+  nextPage() {
+    this.currentPage = this.currentPage + 1;
+    this.onChangePage(this.currentPage);
+  }
+
   onCloseEditModal() {
     this.isEditModalOpen = false;
     console.log(this.totalProducts);

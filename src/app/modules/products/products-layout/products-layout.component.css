@@ -196,7 +196,7 @@ tbody tr:last-child td {
   filter: brightness(0.94);
 }
 .active {
-  background-color: #4174f6;
+  background-color: #90b0ff !important;
 }
 
 .edit-btn {
