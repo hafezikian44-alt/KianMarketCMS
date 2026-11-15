@@ -27,6 +27,8 @@
       <label class="search-box"
         ><span>⌕</span
         ><input
+          [(ngModel)]="searchValue"
+          (keyup)="searchRequest($event)"
           id="product-search"
           type="search"
           placeholder="جستجوی محصول..."

@@ -1,4 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { IProductDto } from 'src/app/dtos/products.dto';
 import { ProductsService } from 'src/app/services/products.service';
 
@@ -22,13 +23,21 @@ export class ProductsLayoutComponent implements OnInit {
   totalProducts: number = 0;
   visiblePage: number = 5;
 
+  searchValue?: Observable<string> ;
+
   ngOnInit() {
+this.searchValue
+
+
+
     this.productsSerevice
       .getProducts(this.currentPage, this.limit)
       .subscribe((response) => {
         this.products = response.products;
         this.totalProducts = response.total;
       });
+
+
   }
 
   get pagination(): number[] {
@@ -97,5 +106,9 @@ export class ProductsLayoutComponent implements OnInit {
   }
   onCloseCreateProductModal() {
     this.isCreateModalOpen = false;
+  }
+
+  searchRequest(event: any) {
+
   }
 }
