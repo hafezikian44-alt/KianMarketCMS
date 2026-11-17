@@ -12,7 +12,7 @@ import { Subject } from 'rxjs';
 export class ProductsLayoutComponent implements OnInit {
   productsSerevice = inject(ProductsService);
 
-  products?: IProductDto[] | null;
+  products: IProductDto[] = [];
   confirmEditProduct?: IProductDto | null;
   currentDelProduct?: IProductDto | null;
   isDeleteModalOpen: boolean = false;
@@ -25,6 +25,7 @@ export class ProductsLayoutComponent implements OnInit {
   visiblePage: number = 5;
 
   searchValue: string = '';
+  searchMood: boolean = false;
 
   ngOnInit() {
     this.productsSerevice
@@ -104,13 +105,20 @@ export class ProductsLayoutComponent implements OnInit {
   }
 
   searchRequest(event: any) {
+    this.searchMood = true;
     this.productsSerevice
       .searchProduct(this.searchValue)
       .pipe(debounceTime(5000))
       .subscribe({
-        next: (response) =>
-          console.log('search opration was successful:', response),
+        next: (response) => {
+          console.log('search opration was successful:', response.products);
+          this.products = response.products;
+        },
         error: (err) => console.log('search opration was not successful:', err),
       });
+    if (this.searchValue === '') {
+      this.searchMood = false;
+      this.ngOnInit();
+    }
   }
 }

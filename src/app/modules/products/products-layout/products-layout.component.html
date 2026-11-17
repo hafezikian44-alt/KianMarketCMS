@@ -28,7 +28,7 @@
         ><span>⌕</span
         ><input
           [(ngModel)]="searchValue"
-          (keyup)="searchRequest($event)"
+          (input)="searchRequest($event)"
           id="product-search"
           type="search"
           placeholder="جستجوی محصول..."
@@ -85,7 +85,7 @@
       <span class="text-light fw-bolder" id="product-total"
         >نمایش {{ totalProducts }} محصول</span
       >
-      <div class="pagination">
+      <div class="pagination" *ngIf="!searchMood">
         <button aria-label="صفحه قبل" (click)="previousPage()">‹</button>
         <button
           *ngFor="let page of pagination"

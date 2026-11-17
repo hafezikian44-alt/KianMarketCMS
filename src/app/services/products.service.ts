@@ -39,6 +39,8 @@ export class ProductsService {
   searchProduct(query: string) {
     console.log('search products is called !');
 
-    return this.http.get(`https://dummyjson.com/products/search?q=${query}`);
+    return this.http.get<IProductsResponseDto>(
+      `https://dummyjson.com/products/search?q=${query}`,
+    );
   }
 }
