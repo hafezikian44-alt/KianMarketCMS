@@ -58,6 +58,7 @@
   min-height: 45px;
   padding: 0 12px;
   border-radius: 10px;
+  border-top: 2px solid #fff;
   color: #b8c5da;
   text-decoration: none;
   transition:

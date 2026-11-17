@@ -26,6 +26,7 @@ export class ProductsLayoutComponent implements OnInit {
 
   searchValue: string = '';
   searchMood: boolean = false;
+  existingSearchProduct: boolean = true;
 
   ngOnInit() {
     this.productsSerevice
@@ -113,8 +114,15 @@ export class ProductsLayoutComponent implements OnInit {
         next: (response) => {
           console.log('search opration was successful:', response.products);
           this.products = response.products;
+          this.totalProducts = response.total;
+          if (response.products.length === 0) {
+            this.existingSearchProduct = false;
+          } else {
+            this.existingSearchProduct = true;
+          }
         },
-        error: (err) => console.log('search opration was not successful:', err),
+        error: (err) =>
+          console.error('search opration was not successful:', err),
       });
     if (this.searchValue === '') {
       this.searchMood = false;

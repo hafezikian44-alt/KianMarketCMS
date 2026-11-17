@@ -4,6 +4,7 @@ import { ProductsLayoutComponent } from './products-layout/products-layout.compo
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { Observable } from 'rxjs';
+
 @NgModule({
   declarations: [ProductsLayoutComponent],
   imports: [CommonModule, SharedModule, FormsModule],

@@ -3,11 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { UsersLayoutComponent } from './modules/users/users-layout/users-layout.component';
 import { ProductsLayoutComponent } from './modules/products/products-layout/products-layout.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
+import { AboutProgramComponent } from './components/about-program/about-program.component';
 
 const routes: Routes = [
   { path: 'users', component: UsersLayoutComponent },
   { path: 'products', component: ProductsLayoutComponent },
   { path: 'dashboard', component: LandingPageComponent },
+  { path: 'about-program', component: AboutProgramComponent },
 ];
 
 @NgModule({

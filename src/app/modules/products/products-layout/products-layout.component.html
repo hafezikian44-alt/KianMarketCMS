@@ -36,7 +36,11 @@
       /></label>
     </header>
     <div class="table-scroll">
-      <table class="products-table">
+      <p class="text-info fs-6 fw-bold p-3" *ngIf="!existingSearchProduct">
+        محصول مورد نظر یافت نشد!
+      </p>
+
+      <table class="products-table" *ngIf="existingSearchProduct">
         <thead>
           <tr class="table-header">
             <th class="text-light" style="font-size: 14px">نام محصول</th>

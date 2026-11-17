@@ -10,9 +10,10 @@ import { MainAsideComponent } from './components/main-aside/main-aside.component
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from 'src/app/modules/shared/shared.module';
+import { AboutProgramComponent } from './components/about-program/about-program.component';
 
 @NgModule({
-  declarations: [AppComponent, LandingPageComponent, MainAsideComponent],
+  declarations: [AppComponent, LandingPageComponent, MainAsideComponent, AboutProgramComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

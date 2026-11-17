@@ -11,20 +11,67 @@
       ><span class="nav-icon">▦</span
       ><span class="nav-responsive">داشبورد</span></a
     >
-    <a class="nav-link" routerLink="/products" routerLinkActive="active"
-      ><span class="nav-icon">◇</span
-      ><span class="nav-responsive">محصولات</span></a
-    >
-    <a class="nav-link" routerLink="/users" routerLinkActive="active"
-      ><span class="nav-icon">♙</span
-      ><span class="nav-responsive">کاربران</span></a
-    >
+    <div class="accordion" id="mainAccordion">
+      <div>
+        <a
+          class="nav-link mb-2 accordion-header"
+          routerLink="/products"
+          routerLinkActive="active"
+          data-bs-toggle="collapse"
+          data-bs-target="#productsCollapse"
+          aria-expanded="false"
+          aria-controls="productsCollapse"
+        >
+          <span class="nav-icon">◇</span>
+          <span class="nav-responsive">محصولات</span>
+        </a>
+
+        <div
+          id="productsCollapse"
+          class="accordion-collapse collapse"
+          data-bs-parent="#mainAccordion"
+        >
+          <div class="accordion-body">
+            <strong>متن تستی محصولات</strong>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <a
+          class="nav-link mb-2 accordion-header"
+          routerLink="/users"
+          routerLinkActive="active"
+          data-bs-toggle="collapse"
+          data-bs-target="#usersCollapse"
+          aria-expanded="false"
+          aria-controls="usersCollapse"
+        >
+          <span class="nav-icon">♙</span>
+          <span class="nav-responsive">کاربران</span>
+        </a>
+
+        <div
+          id="usersCollapse"
+          class="accordion-collapse collapse"
+          data-bs-parent="#mainAccordion"
+        >
+          <div class="accordion-body">
+            <strong>متن تستی کاربران</strong>
+          </div>
+        </div>
+      </div>
+    </div>
   </nav>
+  <a class="nav-link" routerLink="/about-program" routerLinkActive="active"
+    ><span class="nav-icon">▦</span
+    ><span class="nav-responsive">منو بخون</span></a
+  >
   <div class="sidebar-bottom">
     <div class="d-flex align-items-center">
       <span class="status-dot"></span>
       <p class="fw-bold mb-0">سیستم فعال است</p>
     </div>
-    <p style="font-size: 12px">نسخه ۱.۰.۰</p>
+    <p style="font-size: 12px">نسخه 1.0.0</p>
   </div>
 </aside>
