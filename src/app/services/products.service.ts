@@ -35,4 +35,10 @@ export class ProductsService {
 
     return this.http.post('https://dummyjson.com/products/add', product);
   }
+
+  searchProduct(query: string) {
+    console.log('search products is called !');
+
+    return this.http.get(`https://dummyjson.com/products/search?q=${query}`);
+  }
 }

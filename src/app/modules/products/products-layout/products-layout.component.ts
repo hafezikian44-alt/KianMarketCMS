@@ -1,7 +1,8 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { debounceTime, Observable, switchMap } from 'rxjs';
 import { IProductDto } from 'src/app/dtos/products.dto';
 import { ProductsService } from 'src/app/services/products.service';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-products-layout',
@@ -23,21 +24,15 @@ export class ProductsLayoutComponent implements OnInit {
   totalProducts: number = 0;
   visiblePage: number = 5;
 
-  searchValue?: Observable<string> ;
+  searchValue: string = '';
 
   ngOnInit() {
-this.searchValue
-
-
-
     this.productsSerevice
       .getProducts(this.currentPage, this.limit)
       .subscribe((response) => {
         this.products = response.products;
         this.totalProducts = response.total;
       });
-
-
   }
 
   get pagination(): number[] {
@@ -109,6 +104,13 @@ this.searchValue
   }
 
   searchRequest(event: any) {
-
+    this.productsSerevice
+      .searchProduct(this.searchValue)
+      .pipe(debounceTime(5000))
+      .subscribe({
+        next: (response) =>
+          console.log('search opration was successful:', response),
+        error: (err) => console.log('search opration was not successful:', err),
+      });
   }
 }
