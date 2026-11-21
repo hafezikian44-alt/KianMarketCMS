@@ -32,12 +32,27 @@
           data-bs-parent="#mainAccordion"
         >
           <div class="accordion-body">
-            <strong>متن تستی محصولات</strong>
+            <div class="d-flex gap-1">
+              <input
+                class="input-group form-control"
+                type="search"
+                placeholder="جستجو ..."
+              />
+              <button class="btn btn-primary">⌕</button>
+            </div>
+
+            <ul class="list-group category-list mt-2">
+              <li class="list-group-item" *ngFor="let category of categories">
+                <a
+                  class="text-decoration-none"
+                  (click)="onCategory(category.slug)"
+                  >{{ category.name }}</a
+                >
+              </li>
+            </ul>
           </div>
         </div>
-      </div>
 
-      <div>
         <a
           class="nav-link mb-2 accordion-header"
           routerLink="/users"

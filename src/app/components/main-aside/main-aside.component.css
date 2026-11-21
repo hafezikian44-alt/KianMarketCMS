@@ -94,6 +94,12 @@
   border-radius: 50%;
   background: #35d39a;
 }
+.category-list {
+  height: 200px;
+  overflow-y: scroll;
+  font-size: 14px;
+  font-weight: 600;
+}
 
 @media (max-width: 950px) {
   .nav-responsive {

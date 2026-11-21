@@ -11,6 +11,9 @@ import { Observable } from 'rxjs';
 })
 export class ProductsService {
   private http = inject(HttpClient);
+
+  categurySlug: string = '';
+
   constructor() {}
 
   getProducts(page: number, limit: number) {
@@ -42,5 +45,13 @@ export class ProductsService {
     return this.http.get<IProductsResponseDto>(
       `https://dummyjson.com/products/search?q=${query}`,
     );
+  }
+
+  getProductSlug(slug: string) {
+    this.categurySlug = slug;
+    console.log(this.categurySlug);
+  }
+  getProductsByCategory(slug: string) {
+    return this.http.get(`https://dummyjson.com/products/category/${slug}`);
   }
 }

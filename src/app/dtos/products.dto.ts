@@ -23,6 +23,10 @@ export interface IProductDto {
   thumbnail: string;
 }
 
+export interface ICategoryDto {
+  name: string;
+  slug: string;
+}
 export interface IProductDimensionsDto {
   width: number;
   height: number;

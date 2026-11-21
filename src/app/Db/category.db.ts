@@ -1,0 +1,28 @@
+import { ICategoryDto } from '../dtos/products.dto';
+
+export const categoriesDb: ICategoryDto[] = [
+  { name: 'Beauty', slug: 'beauty' },
+  { name: 'Fragrances', slug: 'fragrances' },
+  { name: 'Furniture', slug: 'furniture' },
+  { name: 'Groceries', slug: 'groceries' },
+  { name: 'Home Decoration', slug: 'home-decoration' },
+  { name: 'Kitchen Accessories', slug: 'kitchen-accessories' },
+  { name: 'Laptops', slug: 'laptops' },
+  { name: 'Mens Shirts', slug: 'mens-shirts' },
+  { name: 'Mens Shoes', slug: 'mens-shoes' },
+  { name: 'Mens Watches', slug: 'mens-watches' },
+  { name: 'Mobile Accessories', slug: 'mobile-accessories' },
+  { name: 'Motorcycle', slug: 'motorcycle' },
+  { name: 'Skin Care', slug: 'skin-care' },
+  { name: 'Smartphones', slug: 'smartphones' },
+  { name: 'Sports Accessories', slug: 'sports-accessories' },
+  { name: 'Sunglasses', slug: 'sunglasses' },
+  { name: 'Tablets', slug: 'tablets' },
+  { name: 'Tops', slug: 'tops' },
+  { name: 'Vehicle', slug: 'vehicle' },
+  { name: 'Womens Bags', slug: 'womens-bags' },
+  { name: 'Womens Dresses', slug: 'womens-dresses' },
+  { name: 'Womens Jewellery', slug: 'womens-jewellery' },
+  { name: 'Womens Shoes', slug: 'womens-shoes' },
+  { name: 'Womens Watches', slug: 'womens-watches' },
+];
