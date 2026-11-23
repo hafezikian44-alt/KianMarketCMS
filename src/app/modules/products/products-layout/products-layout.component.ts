@@ -35,6 +35,23 @@ export class ProductsLayoutComponent implements OnInit {
         this.products = response.products;
         this.totalProducts = response.total;
       });
+
+    this.productsSerevice.categurySlug
+      .pipe(
+        switchMap((slug) => this.productsSerevice.getProductsByCategory(slug)),
+      )
+      .subscribe({
+        next: (response) => {
+          console.log(
+            'filterd products are got successfuly:',
+            response.products,
+          );
+          this.products = response.products;
+        },
+        error: (err) => {
+          console.error('filterd products couldent got:', err);
+        },
+      });
   }
 
   get pagination(): number[] {

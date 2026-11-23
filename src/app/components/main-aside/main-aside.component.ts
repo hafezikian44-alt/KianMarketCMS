@@ -15,4 +15,6 @@ export class MainAsideComponent {
   onCategory(slug: string) {
     this.productsService.getProductSlug(slug);
   }
+
+  onResetFilter() {}
 }

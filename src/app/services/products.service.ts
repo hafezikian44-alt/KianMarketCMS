@@ -5,14 +5,15 @@ import {
   IProductDto,
   IProductsResponseDto,
 } from '../dtos/products.dto';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
 export class ProductsService {
   private http = inject(HttpClient);
 
-  categurySlug: string = '';
+  categurySub = new Subject<string>();
+  categurySlug = this.categurySub.asObservable();
 
   constructor() {}
 
@@ -48,10 +49,12 @@ export class ProductsService {
   }
 
   getProductSlug(slug: string) {
-    this.categurySlug = slug;
+    this.categurySub.next(slug);
     console.log(this.categurySlug);
   }
-  getProductsByCategory(slug: string) {
-    return this.http.get(`https://dummyjson.com/products/category/${slug}`);
+  getProductsByCategory(slug: string): Observable<IProductsResponseDto> {
+    return this.http.get<IProductsResponseDto>(
+      `https://dummyjson.com/products/category/${slug}`,
+    );
   }
 }
