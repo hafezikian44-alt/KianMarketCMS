@@ -49,6 +49,8 @@
 .nav {
   display: grid;
   gap: 7px;
+
+  background: #030057;
 }
 
 .nav-link {

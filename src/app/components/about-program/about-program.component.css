@@ -1,0 +1,163 @@
+.readme-container {
+  direction: rtl;
+  width: 100%;
+  max-width: 1000px;
+  margin: 30px auto;
+  background: #fff;
+  border: 1px solid #e5eaf2;
+  border-radius: 16px;
+  overflow: hidden;
+  color: #2a3850;
+  font-family: inherit;
+  box-shadow: 0 8px 30px rgba(42, 56, 80, 0.06);
+}
+
+.readme-header {
+  background: #030057;
+  color: #fff;
+  padding: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.readme-label {
+  color: #8eafff;
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.readme-header h2 {
+  margin: 10px 0 5px;
+  font-size: 28px;
+}
+
+.readme-header p {
+  color: #c3ccda;
+  margin: 0;
+  font-size: 14px;
+}
+
+.readme-icon {
+  width: 65px;
+  height: 65px;
+  border-radius: 16px;
+  background: linear-gradient(140deg, #2dd4df, #3769ef);
+  display: grid;
+  place-items: center;
+  font-size: 21px;
+  font-weight: 800;
+  color: white;
+  direction: ltr;
+}
+
+.readme-body {
+  padding: 30px;
+}
+
+.readme-section {
+  margin-bottom: 30px;
+}
+
+.readme-section h3 {
+  font-size: 17px;
+  margin: 0 0 15px;
+  padding-right: 12px;
+  border-right: 3px solid #3265e6;
+  color: #2a3850;
+}
+
+.readme-section > p {
+  font-size: 14px;
+  line-height: 2.2;
+  color: #69778b;
+  margin: 0;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 17px;
+  background: #f7f9fc;
+  border: 1px solid #edf0f5;
+  border-radius: 10px;
+}
+
+.feature-item > span {
+  color: #3265e6;
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.feature-item strong {
+  font-size: 14px;
+  color: #2a3850;
+}
+
+.feature-item p {
+  font-size: 12px;
+  color: #8490a2;
+  margin: 6px 0 0;
+}
+
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.tech-list span {
+  background: #eef3ff;
+  color: #3265e6;
+  padding: 8px 13px;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 600;
+  direction: ltr;
+}
+
+.readme-footer {
+  border-top: 1px solid #edf0f5;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  color: #98a2b2;
+  font-size: 11px;
+  direction: ltr;
+}
+
+@media (max-width: 600px) {
+  .readme-header {
+    padding: 24px 18px;
+  }
+
+  .readme-body {
+    padding: 22px 16px;
+  }
+
+  .readme-header h2 {
+    font-size: 23px;
+  }
+
+  .readme-icon {
+    width: 52px;
+    height: 52px;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .readme-footer {
+    flex-direction: column;
+  }
+}
